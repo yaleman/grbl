@@ -40,6 +40,11 @@
 
 // Define the Grbl system include files. NOTE: Do not alter organization.
 #include "config.h"
+#ifdef GENERIC_3018
+ #ifdef VARIABLE_SPINDLE
+ 	#error Variable spindles on this unit are not supported
+ #endif
+#endif
 #include "nuts_bolts.h"
 #include "settings.h"
 #include "system.h"
@@ -61,11 +66,6 @@
 #include "stepper.h"
 #include "jog.h"
 
-#ifdef GENERIC_3018
- #ifdef VARIABLE_SPINDLE
- 	#error Variable spindles on this unit are not supported
- #endif
-#endif
 
 // ---------------------------------------------------------------------------------------
 // COMPILE-TIME ERROR CHECKING OF DEFINE VALUES:
