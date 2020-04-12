@@ -61,6 +61,12 @@
 #include "stepper.h"
 #include "jog.h"
 
+#ifdef GENERIC_3018
+ #ifdef VARIABLE_SPINDLE
+ 	#error Variable spindles on this unit are not supported
+ #endif
+#endif
+
 // ---------------------------------------------------------------------------------------
 // COMPILE-TIME ERROR CHECKING OF DEFINE VALUES:
 
